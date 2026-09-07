@@ -5,7 +5,7 @@ git add .
 echo Committing changes...
 git commit -m "Complete Rosemary Cafe website release"
 echo Pushing to GitHub...
-git push -u origin main
+git push -u origin main --force
 echo.
 echo Done! If you see any message above, please check it.
 pause
