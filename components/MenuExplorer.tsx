@@ -77,9 +77,9 @@ export function MenuExplorer({ categories, initialCategory = "all" }: { categori
                     <h3 className="ar" dir="rtl">ألعاب الطاولة مجانية</h3>
                   </div>
                   <p className="board-games-desc">
-                    <span className="ar" dir="rtl">طاولة الزهر، الشطرنج، أوراق اللعب وغيرها متوفرة لزبائننا الكرام</span>
+                    <span className="ar" dir="rtl">اسأل فريقنا عن الألعاب المتوفرة</span>
                     <span className="board-games-divider" aria-hidden="true">|</span>
-                    <span>Backgammon, chess, card games and more — ask our team anytime</span>
+                    <span>Ask the staff for available games</span>
                   </p>
                 </div>
               </aside>
