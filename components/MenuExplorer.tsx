@@ -67,9 +67,8 @@ export function MenuExplorer({ categories, initialCategory = "all" }: { categori
                     </div>
                     <p>{menuItem.nameAr}</p>
                   </div>
-                  <strong aria-label={`Price: ${menuItem.price} Shekels`}>
+                  <strong aria-label={`Price: ${menuItem.price}`}>
                     <b>{menuItem.price}</b>
-                    <small>₪</small>
                   </strong>
                 </article>
               ))}

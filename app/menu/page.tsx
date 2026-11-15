@@ -14,7 +14,6 @@ export default async function MenuPage({ searchParams }: { searchParams: Promise
         <div className="menu-hero-copy">
           <p className="micro-label">ROSEMARY CAFÉ · JENIN</p>
           <h1>Menu</h1>
-          <div className="menu-size-key"><b>Medium · M</b><b>Large · L</b></div>
         </div>
       </section>
       <div className="menu-page container"><MenuExplorer categories={menuCategories} initialCategory={category} /></div>
