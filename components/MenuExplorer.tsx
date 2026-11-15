@@ -7,6 +7,19 @@ function SearchIcon() {
   return <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.4 15.4 5 5" /></svg>;
 }
 
+function DiceIcon() {
+  return (
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="4" />
+      <circle cx="8" cy="8" r="1.3" fill="currentColor" />
+      <circle cx="16" cy="8" r="1.3" fill="currentColor" />
+      <circle cx="12" cy="12" r="1.3" fill="currentColor" />
+      <circle cx="8" cy="16" r="1.3" fill="currentColor" />
+      <circle cx="16" cy="16" r="1.3" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function MenuExplorer({ categories, initialCategory = "all" }: { categories: MenuCategory[]; initialCategory?: string }) {
   const validInitialCategory = initialCategory === "drinks" || categories.some((category) => category.id === initialCategory);
   const [active, setActive] = useState(validInitialCategory ? initialCategory : "all");
@@ -49,6 +62,28 @@ export function MenuExplorer({ categories, initialCategory = "all" }: { categori
       <div className="menu-sections">
         {visible.map((category, categoryIndex) => (
           <section className={`menu-category menu-category-${category.id}`} id={category.id} key={category.id}>
+            {category.id === "shisha" && (
+              <aside className="board-games-banner" role="complementary" aria-label="Board games free of charge notice">
+                <div className="board-games-icon" aria-hidden="true">
+                  <DiceIcon />
+                </div>
+                <div className="board-games-content">
+                  <div className="board-games-top">
+                    <span className="board-games-badge">Complimentary · مجاناً</span>
+                  </div>
+                  <div className="board-games-headings">
+                    <h3>Board games are free of charge</h3>
+                    <span className="board-games-bullet" aria-hidden="true">✦</span>
+                    <h3 className="ar" dir="rtl">ألعاب الطاولة مجانية</h3>
+                  </div>
+                  <p className="board-games-desc">
+                    <span className="ar" dir="rtl">طاولة الزهر، الشطرنج، أوراق اللعب وغيرها متوفرة لزبائننا الكرام</span>
+                    <span className="board-games-divider" aria-hidden="true">|</span>
+                    <span>Backgammon, chess, card games and more — ask our team anytime</span>
+                  </p>
+                </div>
+              </aside>
+            )}
             <header className="menu-category-heading">
               <span className="menu-category-number">{String(categoryIndex + 1).padStart(2, "0")}</span>
               <div>
